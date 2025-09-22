@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachana N</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgZmlsbD0iIzRmZDFkOSIgcj0iMzAiLz48cGF0aCBkPSJtMjAuNCAxNy4xaDYuMnYxNy44YzAgMiAuMiAzLjQuNyA0LjQuNyAxLjYgMi4zIDIuNCA0LjggMi40IDIuNCAwIDQtLjggNC44LTIuNC41LS45LjctMi40LjctNC40di0xNy44aDYuMnYxNy45YzAgMy4xLS41IDUuNS0xLjQgNy4yLTEuOCAzLjEtNS4yIDQuNy0xMC4yIDQuN3MtOC40LTEuNi0xMC4yLTQuN2MtMS0xLjctMS40LTQuMS0xLjQtNy4yeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+        type="image/png"> <!-- Replace with your logo path -->
+
+    <style>
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        /* Text typing animation */
+        .typing {
+            border-right: 2px solid rgb(21, 244, 58);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2s steps(10, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+    <!-- Header with Navigation Tabs -->
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-purple-500">Rachana N</h1>
+            <!-- Hamburger Icon for Mobile View -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#about" class="text-gray-300 hover:text-yellow-500 transition">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-yellow-500 transition">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-yellow-500 transition">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-yellow-500 transition">Projects</a>
+                <a href="#blogs" class="text-gray-300 hover:text-yellow-500 transition">Blogs</a>
+                <a href="#contact" class="text-gray-300 hover:text-yellow-500 transition">Contact</a>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-gray-800 text-gray-300 hidden">
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-700 transition">About</a>
+            <a href="#skills" class="block px-4 py-2 hover:bg-gray-700 transition">Skills</a>
+            <a href="#experience" class="block px-4 py-2 hover:bg-gray-700 transition">Experience</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 transition">Projects</a>
+            <a href="#blogs" class="block px-4 py-2 hover:bg-gray-700 transition">Blogs</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 transition">Contact</a>
+        </div>
+    </header>
+
+    <div class="flex flex-col md:flex-row">
+        <!-- Sidebar with Contact Info -->
+        <!-- Sidebar with Contact Info -->
+        <aside class="w-full md:w-64 bg-gray-800 min-h-screen p-6">
+            <div class="text-center mb-8">
+                <img src="assets/imgs/me.jpg"
+                    alt="Profile Picture" class="rounded-full mx-auto mb-4 w-32 h-32">
+                <h2 class="text-xl font-semibold">I'm a <span id="role" class="text-purple-500"></span></h2>
+            </div>
+            <div class="flex justify-center space-x-4 text-purple-500 mb-4">
+                <p class="flex items-center">
+                    <a href="mailto:rachananariyanga28@gmail.com" class="flex items-center hover:text-white">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </p>
+                <p class="flex items-center">
+                    <a href="tel:+919353646061" class="flex items-center hover:text-white">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/Rachana212" class="flex items-center hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/rachana-n-987520270/"
+                        class="flex items-center hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="file:///C:/Users/racha/OneDrive/Documents/Protfolio%20-Rachana/Protfolio/index.html" class="flex items-center hover:text-white">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </p>
+                
+            </div>
+
+            <!-- <div class="text-gray-400 text-center">
+        <p>rachananariyanga28@gmail.com</p>
+        <p>+91 9353646061</p>
+    </div> -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 md:p-8">
+            <!-- About Section -->
+            <section id="about" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">About Me</h2>
+                <p class="text-gray-300">
+                    I am a passionate Data Analyst and Data Science enthusiast with a strong interest in turning data into actionable insights.
+                    I specialize in data cleaning, visualization, and predictive modeling, helping to uncover trends and support informed decision-making.
+                    My skills include Python, Pandas, SQL, Flask, PHP, MySQL, and API integrations, giving me the ability to handle both analytics and development tasks.
+                    I enjoy building projects that combine data-driven insights with full-stack applications, making them practical and impactful.
+                    With a focus on accuracy, problem-solving, and scalability, I aim to deliver solutions that address real-world business challenges..
+                </p>
+
+                <div class="mt-6 flex space-x-4">
+                    <a href="mailto:rachanannariyanga28@gmail.com"
+                        class="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded transition duration-300">
+                        Hire Me
+                    </a>
+                    <a href="https://drive.google.com/file/d/1fyWAxh_zXKTAYK2ffDEnOor069ZF-Ys3/view?usp=sharing"
+                        target="_blank"
+                        class="inline-block px-6 py-2 text-white bg-purple-500 hover:bg-purple-600 rounded transition duration-300">
+                        Resume
+                    </a>
+                </div>
+            </section>
+
+            <!-- Profile Summary Section -->
+            <section id="profile" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Profile Summary</h2>
+                <ul class="list-disc ml-6 text-gray-300">
+                    <li><b>Data Analyst:</b> Skilled in data analysis, automation, and visualization, with the ability to apply analytical techniques to extract insights, structure data, and support effective decision-making..</li><br>
+                    <li><b>Technical Expertise:</b> Proficient in Python, SQL with strong knowledge of data cleaning, preprocessing, and database management (MySQL). Skilled in using libraries such as Pandas, NumPy, Scikit-Learn, Matplotlib, and Seaborn.</li><br>
+                    <li><b>Automation Skills:</b> Capable of developing Python-based automation workflows to streamline reporting and notifications, reducing manual tasks.</li><br>
+                    <li><b>Visualization Proficiency:</b> Skilled in creating dashboards and data visualizations using Matplotlib, and Seaborn for monitoring KPIs and business trends.</li><br>
+                    <li><b>Machine Learning Foundations:</b> Hands-on knowledge of supervised and unsupervised learning techniques using Scikit-Learn, applying predictive analytics to extract insights from datasets..</li><br>
+                    <li>Possess strong database management skills, with knowledge of optimizing data storage and retrieval using MySQL.</li>
+                </ul>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Technical Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-python text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Python</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-database text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">SQL</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-table text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300">Pandas</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-palette text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Seaborn</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-server text-4xl text-red-500 mb-2"></i>
+                        <span class="text-gray-300">Data Processing</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-broom text-4xl text-pink-400 mb-2"></i>
+                        <span class="text-gray-300">Data Cleaning</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-green-400 mb-2"></i>
+                        <span class="text-gray-300">EDA</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300">MySQL</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Data Visualization</span>
+                    </div>
+                    
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-robot text-4xl text-purple-500 mb-2"></i>
+                        <span class="text-gray-300">Machine Learning</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-cogs text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Scikit-Learn</span>
+                    </div>
+                    
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code-branch text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Git</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-github text-4xl text-blue mb-2"></i>
+                        <span class="text-gray-300">GitHub</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-signal text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Statistics</span>
+                    </div> 
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">Web Scraping</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-yellow-400 mb-2"></i>
+                        <span class="text-gray-300 text-center"><br>Dashboard | Reporting | KPI</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-users text-4xl text-purple-400 mb-2"></i>
+                        <span class="text-gray-300 text-center">Soft Skills<br>Problem-Solving, Analytical Thinking, Collaboration</span>
+                    </div>
+                </div>
+            </section>
+
+                <!-- Experience Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Internships</h2>
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">DataScience and Machine Learning </h3>
+                    <p class="text-gray-400">Analogica Software Dev Pvt Ltd </p>
+                    <p class="text-gray-400">06/2025 – Present</p>
+                    <a href="https://drive.google.com/file/d/1Ezk3MuKaRGdLPZZK4j-RHb4rkM5ONi3v/view?usp=drive_link" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Gained hands-on experience in data preprocessing, feature engineering, and exploratory data analysis (EDA) on real-world datasets.</li>
+                        <li>Built and evaluated predictive models using classification algorithms, applying optimization and hyperparameter tuning techniques.</li>
+                        <li>Designed data visualizations with Matplotlib and Seaborn to interpret trends and communicate insights effectively.</li>
+                        <li>Strengthened database management skills by working with MySQL for querying, data extraction, and storage optimization.</li>
+                        <li>Collaborated in end-to-end ML workflows, including version control with Git and deployment of models using Render.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- Certifications -->
+            <section id="certifications" class="mb-10 fade-in">
+
+                <!-- Professional Experience Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Certificates</h2>
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Data Science with Python .</li>
+                        <li>Data Science Methodology</li>
+                        <li>Python Project for Data Science</li>
+                        <li>Fundamentals of Al and ML</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Projects</h2>
+                
+                <!-- Project 1 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-yellow-400">SmartSales Elite Reporter</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        SmartSales Elite Reporter – An automated sales reporting system that collects data, generates PDF reports, emails stakeholders, and provides real-time dashboards for admins.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools Used: Python, Flask, Google Forms/Custom HTML, Google Sheets/SQLite, SMTP/Gmail, PDF Generation (ReportLab/Gemini API).</li>
+                        <li>Automated the collection, storage, and reporting of sales data, eliminating manual effort.</li>
+                        <li>Integrated Google Forms/HTML forms with Google Sheets and SQLite for structured data management.</li>
+                        <li>Designed workflows to capture form submissions, generate PDF reports, and trigger automated emails.</li>
+                        <li>Implemented automated report emails to stakeholders, ensuring instant updates and transparency.</li>
+                        <li>Configured admin notifications to provide real-time alerts of new sales entries.</li>
+                        <li>Generated dashboards with visual summaries for quick insights into sales performance.</li>
+                        <li>Workflow covered: Form Submission → Google Sheets/SQLite → Report Generation → Email Notification → Dashboard .</li>
+
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/Rachana212/SmartSales_Elite_Reporter" target="_blank"> SmartSales Elite Reporter</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-yellow-400">Breast Cancer Prediction</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Breast Cancer Prediction – An AI/ML-based system that analyzes patient data, predicts the likelihood of breast cancer, and provides actionable insights for early detection and decision-making.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools Used: Python, Scikit-learn, Pandas, NumPy, Matplotlib/Seaborn, Jupyter Notebook, Pickle (for model saving), Flask (for web interface).</li>
+                        <li>Collected and preprocessed patient data for analysis and modeling.</li>
+                        <li>Built machine learning models to predict breast cancer with high accuracy.</li>
+                        <li>Implemented data scaling and feature engineering for better model performance.</li>
+                        <li>Saved trained models using Pickle for deployment and real-time predictions.</li>
+                        <li>Developed a Flask-based web interface to allow users to input data and get predictions.</li>
+                        <li>Visualized data and model results using Matplotlib and Seaborn for better insights.</li>
+
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/Rachana212/Cancer_prediction" target="_blank">Breast Cancer Prediction</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-yellow-400">Happiness Prediction</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Happiness Prediction – A machine learning system that analyzes socioeconomic and survey data to predict happiness scores and provide actionable insights for well-being improvement.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools Used: Python, Pandas, NumPy, Scikit-learn, Matplotlib/Seaborn, Jupyter Notebook, Pickle (for model saving), Flask (for web interface).</li>
+                        <li>Collected and preprocessed survey and socioeconomic data for analysis.</li>
+                        <li>Built regression and classification models to predict happiness scores.</li>
+                        <li>Implemented feature engineering and scaling to improve model accuracy.</li>
+                        <li>Saved trained models using Pickle for deployment and real-time predictions.</li>
+                        <li>Developed a Flask-based web interface for users to input data and get happiness predictions.</li>
+                        <li>Visualized data trends and model performance using Matplotlib and Seaborn.</li>
+
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/Rachana212/Happiness-Prediction" target="_blank">Happiness-Prediction</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+
+                <!-- Project 4-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-yellow-400">Sage Transportation Management System</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Sage Transportation Management System – A full-stack platform that automates vehicle rentals, manages bookings, and provides real-time tracking and reporting for fleet operations.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools Used: HTML, CSS, JavaScript, PHP, MySQL, Bootstrap, Visual Studio Code.</li>
+                        <li>Developed a full-stack vehicle rental platform for managing bookings and fleet operations.</li>
+                        <li>Implemented user authentication and role-based access for customers and admins.</li>
+                        <li>Integrated database (MySQL) to store vehicle, booking, and user data efficiently.</li>
+                        <li>Designed responsive frontend interfaces using HTML, CSS, JavaScript, and Bootstrap.</li>
+                        <li>Enabled real-time booking management, vehicle availability tracking, and reporting.</li>
+                        <li>Ensured smooth user experience with interactive forms, search, and filtering features.</li>
+
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="" target="_blank">Sage Transportation Management System</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+
+            <!-- blogs -->
+            <section id="blogs" class="mb-10 fade-in">
+                <!-- Blogs Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Blogs</h2>
+
+                <!-- Blogs 1-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">
+                        The Fusion Scroll – Merging, Joining & Stacking Data
+                    </h3>
+                    <p class="text-gray-400">Explored  how the Fusion Scroll combines scattered datasets by merging, joining, and stacking, making them easier to use. 
+                        Showed how it creates strong data connections for better insights and analysis.</p>
+                    <a href="https://certisured.com/blogs/python-oop-revolution" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                </div>
+              
+                <!-- Blogs 2-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">
+                        The Query Trials – Filtering Truth in a Sea of Data
+                    </h3>
+                    <p class="text-gray-400">Highlighted how the Query Trials use filters and conditions to find the right information in large datasets. 
+                        Showed how it works like a detective solving data mysteries with precision.</p>
+                    <a href="https://certisured.com/blogs/the-importance-of-sql-in-today-s-world-a-fundamental-data-manipulation-language" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                </div>
+
+                <!-- Blogs 3-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">
+                        Linear Regression
+                    </h3>
+                    <p class="text-gray-400">Presented how Linear Regression helps identify relationships between variables by fitting a straight line. 
+                        Demonstrated how it predicts outcomes, making it useful for trends, forecasting, and decision-making.</p>
+                    <a href="https://certisured.com/blogs/exploring-the-core-principles-of-decision-tree-in-machine-learning" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-blue-500 mb-4">Contact Me</h2>
+                <form id="contact-form" class="space-y-4">
+                    
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <textarea name="message" rows="5" placeholder="Your Message"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required></textarea>
+                    <button type="submit"
+                        class="w-full bg-green-500 text-black p-2 rounded hover:bg-green-400 transition">Send
+                        Message</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 text-center">
+        <p class="text-gray-400">&copy; 2025 Rachana N. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("ij1RiDJCw-hYEYW7D"); // Replace with your EmailJS user ID
+        })();
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_bekueuy', 'template_1nnpic9', this)
+                .then(function () {
+                    alert("Message sent successfully!");
+                }, function (error) {
+                    alert("Failed to send the message. Please try again.");
+                    console.log('EmailJS error:', error);
+                });
+        });
+
+        // Text Animation for Role
+        const roles = ["Data Analyst", "Machine Learning Engineer","Data Scientist"];
+        let currentRoleIndex = 0;
+        let currentCharIndex = 0;
+        const roleElement = document.getElementById("role");
+
+        function type() {
+            if (currentCharIndex < roles[currentRoleIndex].length) {
+                roleElement.textContent += roles[currentRoleIndex].charAt(currentCharIndex);
+                currentCharIndex++;
+                setTimeout(type, 100); // Speed of typing
+            } else {
+                setTimeout(deleteRole, 1000); // Pause before deleting
+            }
+        }
+
+        function deleteRole() {
+            if (currentCharIndex > 0) {
+                roleElement.textContent = roleElement.textContent.slice(0, -1);
+                currentCharIndex--;
+                setTimeout(deleteRole, 50); // Speed of deleting
+            } else {
+                currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                setTimeout(type, 500); // Pause before typing next role
+            }
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // Start the typing animation
+        document.addEventListener("DOMContentLoaded", type);
+
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
